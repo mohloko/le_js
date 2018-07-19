@@ -6,15 +6,15 @@ function activateGallery() {
   let mainImage  = document.querySelector("#gallery-photo img");
 
   thumbnails.forEach(function(thumbnail) {
-    thumbnail.addEventListener("click", function() {
-      // Preload large images.
-      let newImageSrc = thumbnail.dataset.largeVersion;
-      let largeVersion = new Image();
-      largeVersion.src = newImageSrc;
+    // Preload large images.
+    let newImageSrc = thumbnail.dataset.largeVersion;
+    let largeVersion = new Image();
+    largeVersion.src = newImageSrc;
 
+    thumbnail.addEventListener("click", function() {
       // Set clicked image as main image.
       mainImage.setAttribute("src", newImageSrc);
-      mainImage.setAttribute("alt", thumbnail.alt);
+      mainImage.setAttribute("alt", thumbnail);
 
       // Change which image is current.
       document.querySelector(".current").classList.remove("current");
