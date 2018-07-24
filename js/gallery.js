@@ -17,8 +17,9 @@ function activateGallery() {
       mainImage.setAttribute("alt", thumbnail);
 
       // Change which image is current.
-      document.querySelector(".current").classList.remove("current");
-      thumbnail.parentNode.classList.add("current");
+      const className = "current";
+      document.querySelector(".${className}").classList.remove(className);
+      thumbnail.parentNode.classList.add(className);
 
       // Update image info.
       let galleryInfo = document.querySelector("#gallery-info");
