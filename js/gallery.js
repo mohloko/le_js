@@ -18,7 +18,7 @@ function activateGallery() {
 
       // Change which image is current.
       const className = "current";
-      document.querySelector(".${className}").classList.remove(className);
+      document.querySelector(`.${className}`).classList.remove(className);
       thumbnail.parentNode.classList.add(className);
 
       // Update image info.
